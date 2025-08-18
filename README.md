@@ -1,4 +1,4 @@
-# Overview of the Basic Custom Engine Agent Template
+# The Brand Story Bot
 
 This app template is built on top of [Microsoft 365 Agents SDK](https://github.com/Microsoft/Agents).
 It showcases an agent that responds to user questions like ChatGPT. This enables your users to talk with the agent using your custom engine.
