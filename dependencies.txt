@@ -1,0 +1,14 @@
+teamsbotwithnosql@1.0.0 C:\Users\mcotache\Documents\projects\teams-agent-with-nosql\teams-bot-with-nosql
+├── @azure/identity@4.10.2
+├── @azure/openai@2.0.0
+├── @microsoft/agents-hosting@0.2.14
+├── @types/express@5.0.3
+├── @types/node@18.19.120
+├── env-cmd@10.1.0
+├── express@5.1.0
+├── nodemon@3.1.10
+├── openai@4.104.0
+├── shx@0.3.4
+├── ts-node@10.9.2
+└── typescript@5.8.3
+
