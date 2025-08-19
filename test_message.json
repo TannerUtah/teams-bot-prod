@@ -1,0 +1,1 @@
+{"type":"message","id":"test-id","timestamp":"2025-08-18T20:04:13.000Z","serviceUrl":"http://localhost:3978","channelId":"test","from":{"id":"playground-user","name":"Playground User"},"conversation":{"id":"playground-conversation"},"recipient":{"id":"bot"},"text":"hello from playground test"} 
