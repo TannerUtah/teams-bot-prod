@@ -20,10 +20,6 @@ It showcases an agent that responds to user questions like ChatGPT. This enables
 1. Press F5 to start debugging which launches your agent in Microsoft 365 Agents Playground using a web browser. Select `Debug in Microsoft 365 Agents Playground`.
 1. You can send any message to get a response from the agent.
 
-**Congratulations**! You are running an agent that can now interact with users in Microsoft 365 Agents Playground:
-
-![Basic AI Agent](https://github.com/user-attachments/assets/984af126-222b-4c98-9578-0744790b103a)
-
 ## Development Workflow
 
 ### Branch Strategy
