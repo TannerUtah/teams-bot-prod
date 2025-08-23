@@ -71,23 +71,23 @@ const server = expressApp.listen(port, '127.0.0.1', () => {
 
 // Listen for incoming requests.
 expressApp.post("/api/messages", async (req: Request, res: Response) => {
-  console.log('📨 Received message request');
+  console.log('Received message request');
   console.log('Request body:', JSON.stringify(req.body, null, 2));
   console.log('Request headers:', req.headers);
   
   try {
-    console.log('🔄 About to call adapter.process...');
+    console.log('About to call adapter.process...');
     console.log('Adapter type:', typeof adapter);
     console.log('Adapter methods:', Object.getOwnPropertyNames(adapter));
     
     await adapter.process(req, res, async (context) => {
-      console.log('📝 Inside adapter callback');
+      console.log('Inside adapter callback');
       console.log('Context type:', context?.activity?.type);
       await agentApp.run(context);
     });
-    console.log('✅ Message processed successfully');
+    console.log('Message processed successfully');
   } catch (error) {
-    console.error('❌ Error processing message:', error);
+    console.error('Error processing message:', error);
     console.error('Error stack:', error.stack);
     if (!res.headersSent) {
       res.status(500).json({ error: 'Internal server error', details: error.message });
