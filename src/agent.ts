@@ -25,9 +25,9 @@ let currentUserRole: string | null = null;
 // Available indexes - add your other indexes here as they're created
 const availableIndexes = [
   "audience-messaging-index",
-  "general-audiences-index",           // Add when created
+  "general-audiences-index",    // Add when created
   "brand-foundation-index",    // Add when created  
-  // "offering-messaging-index"   // Add when created
+  "offering-messaging-index"   // Add when created
 ];
 
 // Greeting patterns
@@ -41,8 +41,7 @@ const greetingPatterns = [
 const rolePatterns = {
   partner: ['i am a partner', "i'm a partner", 'as a partner', 'partner'],
   manager: ['i am a manager', "i'm a manager", 'as a manager', 'i manage', 'manager'],
-  associate: ['i am an associate', "i'm an associate", 'as an associate', 'new to', 'associate'],
-  client: ['i am a client', "i'm a client", 'external', 'customer', 'client']
+  associate: ['i am an associate', "i'm an associate", 'as an associate', 'new to', 'associate']
 };
 
 // Helper functions for greetings
@@ -168,7 +167,7 @@ async function searchAllIndexes(query: string) {
   console.log(`Searching across ${availableIndexes.length} indexes for: "${query}"`);
 
   const searchPromises = availableIndexes.map(indexName =>
-    searchSingleIndex(indexName, query, 3) // Get top 3 from each index
+    searchSingleIndex(indexName, query, 4) // Get top 3 from each index
   );
 
   const searchResults = await Promise.all(searchPromises);
@@ -262,15 +261,14 @@ agentApp.activity(ActivityTypes.Message, async (context: TurnContext) => {
         `I search across ${availableIndexes.length} content libraries to generate polished outbound messages.\n\n` +
         `**Current Mode:** ${userRole.role} (${userRole.style})\n\n` +
         `**Set Your Role:** Type one of these to customize my responses:\n` +
-        `• \`I am a partner\` - Strategic, peer-to-peer communication\n` +
-        `• \`I am a manager\` - Executive-focused, results-oriented responses\n` +
-        `• \`I am an associate\` - Supportive guidance with detailed explanations\n` +
-        `• \`I am a client\` - Professional, service-oriented interaction\n\n` +
-        `**Try asking me:**\n` +
-        `• *Create a one-liner for growth company CEOs*\n` +
-        `• *Help me write messaging for nonprofit organizations*\n` +
-        `• *Generate an outbound message for tech companies needing R&D credits*\n\n` +
-        `**Available Content Libraries:** ${availableIndexes.join(', ')}\n\n` +
+        `\n • \`I am a partner\` - Strategic, peer-to-peer communication\n` +
+        `\n • \`I am a manager\` - Executive-focused, results-oriented responses\n` +
+        `\n • \`I am an associate\` - Supportive guidance with detailed explanations\n` +
+        `\n **Try asking me:**\n` +
+        `\n • *Create a one-liner for growth company CEOs*\n` +
+        `\n • *Help me write messaging for nonprofit organizations*\n` +
+        `\n • *Generate an outbound message for tech companies needing R&D credits*\n\n` +
+        `**Available Content Libraries:** ${availableIndexes.join(', ')}\n\n` + // for testing purposes only
         `What would you like help with?`
       );
       return;
@@ -283,8 +281,7 @@ agentApp.activity(ActivityTypes.Message, async (context: TurnContext) => {
       const roleResponses = {
         partner: "👤 Perfect! I've set your role as **Partner**. I'll communicate using a strategic, collaborative approach focused on shared business goals. What messaging challenge can I help you tackle?",
         manager: "👤 Excellent! I've set your role as **Manager**. I'll provide executive-level, results-focused responses that emphasize business impact and ROI. What would you like to work on?",
-        associate: "👤 Great! I've set your role as **Associate**. I'll provide supportive, detailed guidance to help you succeed with your messaging tasks. How can I help you today?",
-        client: "👤 Thank you! I've set your role as **Client**. I'll provide professional, service-oriented support to help you achieve your goals. What messaging support do you need?"
+        associate: "👤 Great! I've set your role as **Associate**. I'll provide supportive, detailed guidance to help you succeed with your messaging tasks. How can I help you today?"
       };
 
       await context.sendActivity(roleResponses[detectedRole as keyof typeof roleResponses]);
