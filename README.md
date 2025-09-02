@@ -1,11 +1,6 @@
 # The Brand Story Bot
 
-This app template is built on top of [Microsoft 365 Agents SDK](https://github.com/Microsoft/Agents).
 It showcases an agent that responds to user questions like ChatGPT. This enables your users to talk with the agent using your custom engine.
-
-## Get Started with the Template
-
-![Basic AI Agent](https://github.com/user-attachments/assets/984af126-222b-4c98-9578-0744790b103a)
 
 ## Development Workflow
 
@@ -92,7 +87,7 @@ User Input → Microsoft 365 Agents → Your Custom Agent → Azure OpenAI → R
 - **Azure OpenAI** - AI model for generating responses
 - **Microsoft Teams** - Future deployment target (with known limitations)
 
-## What's Included in the Template
+## What's Included
 
 | Folder       | Contents                                            |
 | - | - |
@@ -102,7 +97,6 @@ User Input → Microsoft 365 Agents → Your Custom Agent → Azure OpenAI → R
 | `infra`      | Templates for provisioning Azure resources          |
 | `src`        | The source code for the application                 |
 
-The following files can be customized and demonstrate an example implementation to get you started.
 
 | File                                 | Contents                                           |
 | - | - |
@@ -112,7 +106,6 @@ The following files can be customized and demonstrate an example implementation 
 |`src/agent.ts`| Handles business logics for the Basic Custom Engine Agent.|
 |`src/blobClient.ts`| Provides blob storage utilities.|
 
-The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
 
 | File                                 | Contents                                           |
 | - | - |
